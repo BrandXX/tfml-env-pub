@@ -1,3 +1,25 @@
+-------------------------------------------------------------------------------
+1:57 PM 8/24/2023 Updates to guides
+    - Updated 'README.md', 'quick-start-guide.ipynb', and 'complete_and_improved_environment_setup_guide.txt'
+        - Fixed several spelling mistakes
+        - Simplified some of the shell code 
+    - Added additional info to readme.md
+    - Updated'quick-start-guide.ipynb', and 'complete_and_improved_environment_setup_guide.txt' to make them similar in content.
+    - Successfully tested instructions in the following environment
+        - OS: Microsoft Windows 11 Pro
+            - Version 10.0.22621 Build 22621
+        - Processor: 13th Gen Intel(R) Core(TM) i9-13900KS, 3200 Mhz, 24 Core(s), 32 Logical Processor(s)
+        - BaseBoard: ROG MAXIMUS Z790 HERO
+            - BaseBoard Version	Rev 1.xx
+        - Installed Physical Memory (RAM) 64.0 GB Kingston Fury Beast DDR5 6000
+        - NVIDIA GeForce RTX 4090 by ASUS Tek.
+        - NVIDIA-SMI 535.98.01
+        - NVIDIA Driver Version: 536.99
+        - CUDA Version: 12.2
+        - WSL2 kernel: 5.15.90.1-microsoft-standard-WSL2
+        - Ubuntu Version: 22.04.3 LTS
+-------------------------------------------------------------------------------
 12:49 PM 8/24/2023 Initial publication
     -This is work in progress
     -Please bear with me as I work to get everything in order.
+-------------------------------------------------------------------------------

@@ -1,44 +1,44 @@
 ---------------------------------------------------------------------------
 ### Step by Step guide to installing a Tensorflow 2 environment named tfml
 ---------------------------------------------------------------------------
-#Set the Default user in /etc/wsl.conf
-	#This must be done as root
+# Set the Default user in /etc/wsl.conf
+	# This must be done as root
 sudo su
 echo -e '# My TFML Environment \n[boot] \nsystemd=true \n \n[user] \ndefault=userx \n' > /etc/wsl.conf
 
-#Restart Ubuntu
+# Restart Ubuntu
 Exit Ubuntu then in PowerShell run the following
 wsl --shutdown
 wsl -d ubuntu-tfml
 
-#Update/upgrade apt
+# Update/upgrade apt
 sudo apt update && sudo apt upgrade
 
-#Create folder structure in user directory
+# Create folder structure in user directory
 cd ~
 mkdir {_admin,_temp,docs,downloads,env,projects,env/base,env/tfml}
 
-#Download latest version of Miniconda
+# Download latest version of Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -P ~/downloads/
 
-#Install Miniconda
+# Install Miniconda
 bash ~/downloads/Miniconda3-latest-Linux-x86_64.sh
 
-#Cleanup install files
+# Cleanup install files
 rm ~/downloads/Miniconda3-latest-Linux-x86_64.sh
 
-#Restart Ubuntu
+# Restart Ubuntu
 Exit Ubuntu then in PowerShell run the following
 wsl --shutdown
 wsl -d ubuntu-tfml
 
-#Update Conda
+# Update Conda
 conda update conda
 
-#Save the environments package info in 'env/base'
+# Save the environments package info in 'env/base'
 conda env export > ~/env/base/conda-env-export.yaml
 
-#Create and activate tfml environment
+# Create and activate tfml environment
 wget https://raw.githubusercontent.com/BrandXX/tfml-env-pub/master/tfml/conda-env-export.yaml -P ~/env/tfml/
 conda env create --file=env/tfml/conda-env-export.yaml
 conda activate tfml
@@ -55,23 +55,26 @@ cp -p $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
 echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
-#Verify install:
+# Verify install:
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-<AND/OR>
-#Additional verify test
+
+# Additional verify test
 python3 -c "import tensorflow.compat.v1 as tf; tf.test.is_gpu_available()"
 
-#Additional verification test
+# Additional verification test
 python3 -c "import tensorflow.compat.v1 as tf; tf.enable_eager_execution(tf.ConfigProto(log_device_placement=True)); print(tf.add([1.0, 2.0], [3.0, 4.0]))"
 
-#Save Package Lists for tfml environment
+# Save Package Lists for tfml environment
 conda env export > ~/env/tfml/conda-env-export.yaml
 
 ---------------------------------------------------------------------------
 ### Install and configure VScode
 ---------------------------------------------------------------------------
-VScode is synced
+# Install VScode on your Windows machine. No need to install it in your WSL environment.
+	#Once installed run code . from the Linux terminal
+code .
 
+# Recommended VScode Extensions
 Name: Python Development Extensions Pack
 URL: https://marketplace.visualstudio.com/items?itemName=demystifying-javascript.python-extensions-pack
 Description: This extension pack packages some of the most popular and some of my favorite extensions needed for fullstack Python development or web development.
@@ -89,13 +92,44 @@ wsl --export ubuntu-tfml ubuntu-tfml-00.tar
 ### Additional Config
 ---------------------------------------------------------------------------
 
-# Set Global Git Username and Email
+#Set Global Git Username and Email
 git config --global user.name "Your Name"
 git config --global user.email "youremail@yourdomain.com"
 
 
-# Confirm the Git config changes
+#Confirm the Git config changes
 git config --list
 
+---------------------------------------------------------------------------
+### Saving Package info
+---------------------------------------------------------------------------
+# Recommended
+conda env export > ~/env/tfml/conda-env-export.yaml
+
+# This can be used with pip install -r requirements.txt
+pip freeze > ~/env/tfml/requirements.txt 
+
+# Extras
+conda list --explicit > ~/env/tfml/package-list-explicit_tf2.txt
+conda list > ~/env/tfml/package-list-simple_tf2.txt
+
+---------------------------------------------------------------------------
+### Check versions and info
+---------------------------------------------------------------------------
+# Check Python version
+python3 --version
+
+# Check Tensorflow version
+python3 -c "import tensorflow as tf; print('TensorFlow version:', tf.__version__)"
+
+# <OR>
+
+python3 -c "import tensorflow as tf; print(tf.__version__)"
+
+# Check Keras version
+python -c 'import keras; print(keras.__version__)'
+
+# Nvidia environment info
+nvidia-smi
 ---------------------------------------------------------------------------
 ---------------------------------------------------------------------------
