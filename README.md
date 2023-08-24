@@ -3,7 +3,7 @@ Step by step guide to create a TensorFlow 2.0, CUDA enabled, Python environment 
 The goal of this project is to aid in the setup and configuration of a CUDA enabled WSL2 environment.
 
 Requirements and Assumptions
-    # - A CUDA enabled NVIDIA GPU is present.
+    # - A CUDA enabled NVIDIA GPU that is Compute Capability 5.0 or above is present.
         - Check the CUDA Compatibility list for more info - https://developer.nvidia.com/cuda-gpus
     # - A CUDA enabled NVIDIA driver is installed in Windows
     # - An Ubuntu WSL2 Distro is up and running in a supported Windows build

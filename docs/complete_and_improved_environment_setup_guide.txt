@@ -39,7 +39,7 @@ conda update conda
 conda env export > ~/env/base/conda-env-export.yaml
 
 #Create and activate tfml environment
-wget https://github.com/BrandXX/tfml-env/blob/31d023b3365ab14fd686ad974b16f87200e06094/tfml/conda-env-export.yaml -P ~/env/tfml/
+wget https://raw.githubusercontent.com/BrandXX/tfml-env-pub/master/tfml/conda-env-export.yaml -P ~/env/tfml/
 conda env create --file=env/tfml/conda-env-export.yaml
 conda activate tfml
 
