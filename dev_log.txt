@@ -1,9 +1,16 @@
 -------------------------------------------------------------------------------
-5:56 PM 8/24/2023
+11:11 PM 8/24/2023 - commit:branch:dev
+    - Added expected outputs to the verification process
+    - Cleaned up grammar throughout documentation
+    - Divided the sections in the guides to a more understandable format
+    - Worked on cleaning up README
+
+-------------------------------------------------------------------------------
+5:56 PM 8/24/2023 - Commit:branch:master
     - Updated README with more info and made it more presentable
     - Successfully tested instructions in the following environment
         - OS: Microsoft Windows 10 Enterprise
-            - Version 10.0.19045 Build 19045
+        - Version 10.0.19045 Build 19045
         - Processor: Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz, 3000 Mhz, 8 Core(s), 8 Logical Processor(s)
         - BaseBoard: Dell Inc.
             - BaseBoard Version	ver A01
@@ -16,7 +23,7 @@
         - Ubuntu Version: 22.04.3 LTS
 
 -------------------------------------------------------------------------------
-1:57 PM 8/24/2023 Updates to guides
+1:57 PM 8/24/2023 - Commit:branch:master
     - Updated 'README.md', 'quick-start-guide.ipynb', and 'complete_and_improved_environment_setup_guide.txt'
         - Fixed several spelling mistakes
         - Simplified some of the shell code 

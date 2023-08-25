@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------
 ### Step by Step guide to installing a Tensorflow 2 environment named tfml
 ---------------------------------------------------------------------------
+# Getting Started
+
 This quick start guide assumes
     # - A CUDA enabled NVIDIA GPU is present.
         # - Check the CUDA Compatibility list for more info - https://developer.nvidia.com/cuda-gpus
@@ -11,8 +13,8 @@ This quick start guide assumes
     # - Basic understanding of ubuntu Linux command Line, PowerShell and Python (Nothing heavy is needed)
 
 # TFML = Tensorflow Machine Learning
-# My Distro is named 'ubuntu-tfml' which I use  in the examples
-# My Conda environment is named 'tfml' which I use  in the examples
+# My Distro is named 'ubuntu-tfml' which I use in the examples
+# My Conda environment is named 'tfml' which I use in the examples
 
 # Set the Default user in /etc/wsl.conf
 	# This must be done as root
@@ -51,7 +53,7 @@ conda update conda
 # Save the environments package info in 'env/base'
 conda env export > ~/env/base/conda-env-export.yaml
 
-# Create and activate tfml environment
+# Create and activate the tfml environment
 wget https://raw.githubusercontent.com/BrandXX/tfml-env-pub/master/tfml/conda-env-export.yaml -P ~/env/tfml/
 conda env create --file=env/tfml/conda-env-export.yaml
 conda activate tfml
@@ -68,36 +70,60 @@ cp -p $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
 echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
-# Verify install:
+---------------------------------------------------------------------------
+### Testing the environment
+---------------------------------------------------------------------------
+# Verify Test01:
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 
-# Additional verify test
+    # Verify Test01 successful output
+    # Don't worry too much about Warnings or Information messages. The primary goal of the test is to list the GPU in the last line.
+
+[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+
+# Verify Test02
 python3 -c "import tensorflow.compat.v1 as tf; tf.test.is_gpu_available()"
 
-# Additional verification test
+    # Verify Test02 successful output
+    # Don't worry too much about Warnings or Information messages. The primary goal of the test is to list the GPU in the last line.
+
+2023-08-24 22:48:09.936172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /device:GPU:0 with 21286 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4090, pci bus id: 0000:01:00.0, compute capability: 8.9
+
+# Verify Test03
 python3 -c "import tensorflow.compat.v1 as tf; tf.enable_eager_execution(tf.ConfigProto(log_device_placement=True)); print(tf.add([1.0, 2.0], [3.0, 4.0]))"
 
+# Verify Test03 successful output
+    # Don't worry too much about Warnings or Information messages. The primary goal is to show a 1-dimensional TensorFlow tensor with two elements both stored as 32-bit floating-point numbers.
+tf.Tensor([4. 6.], shape=(2,), dtype=float32)
+
+---------------------------------------------------------------------------
+### Finishing up
+---------------------------------------------------------------------------
 # Save Package Lists for tfml environment
 conda env export > ~/env/tfml/conda-env-export.yaml
 
 ---------------------------------------------------------------------------
 ### Install and configure VScode
 ---------------------------------------------------------------------------
-# Install VScode on your Windows machine. No need to install it in your WSL environment.
-	#Once installed run code . from the Linux terminal
+# No need to install VScode in your WSL environment. Install VScode on your host Windows machine.
+# Once installed run code . from the Linux terminal
 code .
 
 # Recommended VScode Extensions
+Visual Studio Code Remote Development Extension Pack
+URL: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+Description: The Remote Development extension pack allows you to open any folder in a container, on a remote machine, or in the Windows Subsystem for Linux (WSL) and take advantage of VS Code's full feature set.
+
 Name: Python Development Extensions Pack
 URL: https://marketplace.visualstudio.com/items?itemName=demystifying-javascript.python-extensions-pack
 Description: This extension pack packages some of the most popular and some of my favorite extensions needed for fullstack Python development or web development.
-Extensions Included:
 
 Name: Git Extension Pack
 URL: https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack
+Description: This extension pack packages some of the most popular (and some of my favorite) Git extensions.
 
 ---------------------------------------------------------------------------
-### Backup the environment once done
+### Backup the WSL environment
 ---------------------------------------------------------------------------
 wsl --export ubuntu-tfml ubuntu-tfml-00.tar
 
