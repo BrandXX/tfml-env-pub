@@ -1,7 +1,9 @@
 # tfml-env-pub
 
 ## Step by step guide to create a TensorFlow 2.0, CUDA enabled, Python environment within WSL2.
-In hopes of helping others subvert the trials and tribulations of setting up a fully function TenserFlow 2.0 environment, I decided to record my process and share it with the masses. The goal of this project is to aid in the setup and configuration of a CUDA enabled WSL2 environment.
+In hopes of helping others subvert the trials and tribulations of setting up a fully function TenserFlow 2.0 environment, I decided to record my process and share it with the masses.
+
+The goal of this project is to aid in the setup and configuration of a CUDA enabled TensorFlow 2.0 Machine Learning environment (TFML) within WSL2.
 
 ### Requirements and Assumptions
 1. A CUDA enabled NVIDIA GPU or above
