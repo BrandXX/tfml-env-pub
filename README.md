@@ -19,16 +19,16 @@ In hopes of helping others subvert the trials and tribulations of setting up a f
     1. Nothing heavy is needed to get started
 
 ### Primary environment info
-TensorFlow version: 2.13.0
-Keras version: 2.13.1
-Python version: 3.11.4
-ipykernel: 6.25.1
-WSL: 5.15.90.1-microsoft-standard-WSL2
-Ubuntu version: Ubuntu 22.04.3 LTS
-CUDA NVCC version: 12.2.128
-CUDA Toolkit version: 11.8.0
-Jupyter Core version: 5.3.1
-Conda version: 23.7.3
+1. TensorFlow version: 2.13.0
+1. Keras version: 2.13.1
+1. Python version: 3.11.4
+1. ipykernel: 6.25.1
+1. WSL: 5.15.90.1-microsoft-standard-WSL2
+1. Ubuntu version: Ubuntu 22.04.3 LTS
+1. CUDA NVCC version: 12.2.128
+1. CUDA Toolkit version: 11.8.0
+1. Jupyter Core version: 5.3.1
+1. Conda version: 23.7.3
 
 ## More about Tensorflow and Cuda
 
@@ -37,14 +37,14 @@ CUDA on WSL User Guide
     1. https://docs.nvidia.com/cuda/archive/11.5.2/pdf/CUDA_on_WSL_User_Guide.pdf
     1. Also located at /docs/cuda_on_wsl_user_guide.pdf
 
-Tensorflow Compatibility list
-1. https://www.tensorflow.org/install/source#gpu
+1. Tensorflow Compatibility list
+    1. https://www.tensorflow.org/install/source#gpu
 
-Tensorflow's main site
-1. https://www.tensorflow.org/
+1. Tensorflow's main site
+    1. https://www.tensorflow.org/
 
-NVIDIA's Developer site
-1. https://developer.nvidia.com/
+1. NVIDIA's Developer site
+    1. https://developer.nvidia.com/
 
 ## More to come
 
