@@ -1,6 +1,19 @@
 ---------------------------------------------------------------------------
 ### Step by Step guide to installing a Tensorflow 2 environment named tfml
 ---------------------------------------------------------------------------
+This quick start guide assumes
+    # - A CUDA enabled NVIDIA GPU is present.
+        # - Check the CUDA Compatibility list for more info - https://developer.nvidia.com/cuda-gpus
+    # - A CUDA enabled NVIDIA driver is installed in Windows
+    # - An Ubuntu WSL2 Distro is up and running in a supported Windows build
+    # - Network/Internet is available within Windows and the WSL2 environment
+    # - A user was created during the deployment of Ubuntu
+    # - Basic understanding of ubuntu Linux command Line, PowerShell and Python (Nothing heavy is needed)
+
+# TFML = Tensorflow Machine Learning
+# My Distro is named 'ubuntu-tfml' which I use  in the examples
+# My Conda environment is named 'tfml' which I use  in the examples
+
 # Set the Default user in /etc/wsl.conf
 	# This must be done as root
 sudo su

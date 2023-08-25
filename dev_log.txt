@@ -1,4 +1,21 @@
 -------------------------------------------------------------------------------
+5:56 PM 8/24/2023
+    - Updated README with more info and made it more presentable
+    - Successfully tested instructions in the following environment
+        - OS: Microsoft Windows 10 Enterprise
+            - Version 10.0.19045 Build 19045
+        - Processor: Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz, 3000 Mhz, 8 Core(s), 8 Logical Processor(s)
+        - BaseBoard: Dell Inc.
+            - BaseBoard Version	ver A01
+        - Installed Physical Memory (RAM) 16.0 GB
+        - NVIDIA GeForce GT 730
+        - NVIDIA-SMI 471.41
+        - NVIDIA Driver Version: 471.41
+        - CUDA Version: 11.4
+        - WSL2 kernel: 5.15.90.1-microsoft-standard-WSL2
+        - Ubuntu Version: 22.04.3 LTS
+
+-------------------------------------------------------------------------------
 1:57 PM 8/24/2023 Updates to guides
     - Updated 'README.md', 'quick-start-guide.ipynb', and 'complete_and_improved_environment_setup_guide.txt'
         - Fixed several spelling mistakes
