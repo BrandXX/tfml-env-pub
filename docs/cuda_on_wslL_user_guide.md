@@ -87,9 +87,9 @@ echo 'CUDNN_PATH=(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)")'
 echo 'export LD_LIBRARY_PATH=CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> CONDA_PREFIX/lib/nvvm/libdevice/
 cp -p $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
 echo 'export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX/lib' >> CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-Testing the Environment
 ```
 
+## Testing the Environment
 #### Verify Test01
 ```
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
