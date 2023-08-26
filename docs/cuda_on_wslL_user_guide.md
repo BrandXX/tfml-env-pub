@@ -1,12 +1,14 @@
 # Step by Step Guide to Create a Tensorflow 2.0, CUDA Enabled, Python Environment within WSL2
 #### This quick start guide assumes:
 
-*   A CUDA enabled NVIDIA GPU is present. Check the [CUDA Compatibility list](https://developer.nvidia.com/cuda-gpus) for more info.
+*   A CUDA enabled NVIDIA GPU is present.
+    *   Check the [CUDA Compatibility list](https://developer.nvidia.com/cuda-gpus) for more info.
 *   A CUDA enabled NVIDIA driver is installed in Windows.
 *   An Ubuntu WSL2 Distro is up and running in a supported Windows build.
 *   Network/Internet is available within Windows and the WSL2 environment.
 *   A user was created during the deployment of Ubuntu.
-*   Basic understanding of Ubuntu Linux command line, PowerShell, and Python (Nothing heavy is needed).
+*   Basic understanding of Ubuntu Linux command line, PowerShell, and Python.
+    *   Nothing heavy is needed.
 
 #### More info:
 
@@ -15,7 +17,7 @@
 *   My Conda environment is named 'tfml' which I use in the examples.
 
 ## Getting Started
-#### Set the Default User in /etc/wsl.conf
+#### Set the Default User in ```/etc/wsl.conf```
 > **Note:** This must be done as root
 ```
 sudo su
@@ -67,7 +69,7 @@ wsl -d ubuntu-tfml
 conda update conda
 ```
 
-#### Save the Environments Package Info in 'env/base'
+#### Save the 'Base' Environments Package Info in ```env/base```
 ```
 conda env export > ~/env/base/conda-env-export.yaml
 ```
@@ -120,15 +122,21 @@ wsl --export ubuntu-tfml path/ubuntu-tfml-00.tar
 ## Install and Configure VScode
 > **Note:** No need to install VScode in your WSL environment. Install VScode on your ***WINDOWS*** host machine. Once installed, run ```code .``` from the Linux terminal.
 ```
-code.
+code .
 ```
 
 #### Recommended VScode Extensions
 
-*   Visual Studio Code Remote Development Extension Pack
+*   Remote Development Extension Pack
+    *   An extension pack that lets you open any folder in a container, on a remote machine, or in WSL and take advantage of VS Code's full feature set.
+    *   https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
 *   Python Development Extensions Pack
+    *   This extension pack packages some of the most popular and some of my favorite extensions needed for fullstack Python development or web development.
+    *   https://marketplace.visualstudio.com/items?itemName=demystifying-javascript.python-extensions-pack
 *   Git Extension Pack
-*   Backup the WSL Environment
+    *   This extension pack packages some of the most popular (and some of my favorite) Git extensions.
+    *   https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack
+    *   > **Note:** Included in Python Development Extensions Pack
 
 ## Additional Useful Info
 #### Set GIT Global Username and Email
@@ -179,4 +187,4 @@ nvidia-smi
 
 > **Note:** formatting and indentation might need further adjustments based o
 
-&copy; Johnathan Carroll 2023. All Rights Reserved.
+&copy; BrandXX/UserXX 2023. All Rights Reserved.
