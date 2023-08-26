@@ -1,7 +1,8 @@
 -------------------------------------------------------------------------------
-
+    - Created Markdown version of the guide
+    - Added link to full package list to README
 -------------------------------------------------------------------------------
-12:00 AM 8/24/2023 - merge:branch:dev/master
+12:00 AM 8/24/2023 - Commit/merge:branch:dev/master
     - Added expected outputs to the verification process
     - Cleaned up grammar throughout documentation
     - Divided the sections in the guides to a more understandable format

@@ -32,6 +32,9 @@ The goal of this project is to aid in the setup and configuration of a CUDA enab
 1. Jupyter Core version: 5.3.1
 1. Conda version: 23.7.3
 
+Full list of packages.
+https://github.com/BrandXX/tfml-env-pub/blob/master/tfml/conda-env-export.yaml
+
 ## More about Tensorflow and Cuda
 
 CUDA on WSL User Guide
